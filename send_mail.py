@@ -8,6 +8,8 @@ import base64
 from email.mime.text import MIMEText
 import os
 from apiclient import errors
+from email.mime.multipart import MIMEMultipart
+import create_mail
 
 try:
     import argparse
@@ -59,12 +61,18 @@ def SendMessage(service, user_id, message):
         print('An error occurred: %s' % error)
 
 #Gmail API Method to create an emaul https://developers.google.com/gmail/api/v1/reference/users/messages
-def CreateMessage(sender, to, subject, message_text):
-    message = MIMEText(message_text)
+def CreateMessage(sender, to, subject, message_text, text):
+    #Altered with guidance from Python documentation https://docs.python.org/2/library/email-examples.html
+    message = MIMEMultipart('alternative')
+    part1 = MIMEText(text, 'plain')
+    part2 = MIMEText(message_text, 'html')
+    message.attach(part1)
+    message.attach(part2)
     message['to'] = to
     message['from'] = sender
     message['subject'] = subject
-    return {'raw': base64.b64encode(message.as_string())}
+    #Note that base64.urlsafe_b64encode is used
+    return {'raw': base64.urlsafe_b64encode(message.as_string())}
 
 
 def main():
@@ -87,7 +95,9 @@ def main():
         for label in labels:
             print(label['name'])
 
-    content = CreateMessage("william.c.johnson92@gmail.com", "wcjohnson@email.arizona.edu", "test", "test message")
+    html = create_mail.gen_html()
+
+    content = CreateMessage("william.c.johnson92@gmail.com", "wcjohnson@email.arizona.edu", "Gmail API", html, "testing message")
     SendMessage(service, "william.c.johnson92@gmail.com", content)
 
 
