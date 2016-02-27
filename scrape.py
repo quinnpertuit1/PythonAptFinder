@@ -4,6 +4,7 @@ import json
 from create_json import CreateJSON
 import time
 
+
 class ScrapeAPI:
     def __init__(self):
         # create empty dictionary for apartment info
@@ -16,16 +17,16 @@ class ScrapeAPI:
         # create empty dictionary for API parameters
         query = {}
         # create empty dictionary for apartment summary
-        aptInfo = {}
+        apt_info = {}
         # create empty list to contain aptList and aptInfo
-        aptSummary = []
+        apt_summary = []
         # initialize total variable
         total = 0
         # add key & values to dictionary
         query['communityCode'] = 'CA564'
-        query['desiredMoveInDate'] = '2016-02-18T07:00:00.000Z'
-        query['min'] = '1700'
-        query['max'] = '2440'
+        query['desiredMoveInDate'] = '2016-02-29T07:00:00.000Z'
+        query['min'] = '2000'
+        query['max'] = '3000'
         # convert dictionary above into url-encoded string
         url_values = urllib.parse.urlencode(query)
         # append url_values to url from line 6
@@ -41,18 +42,18 @@ class ScrapeAPI:
             elements = len(parsed_json['results']['availableFloorPlanTypes'])
             for i in range(elements):
                 # Number of floor plans in availableFloorPlans array
-                numOfFloorPlans = len(parsed_json['results']['availableFloorPlanTypes'][i]['availableFloorPlans'])
+                num_of_floor_plans = len(parsed_json['results']['availableFloorPlanTypes'][i]['availableFloorPlans'])
                 # Array of available floor plans and apartments (
-                floorPlan = parsed_json['results']['availableFloorPlanTypes'][i]['availableFloorPlans']
+                floor_plan = parsed_json['results']['availableFloorPlanTypes'][i]['availableFloorPlans']
                 # Type of floor plan (Studio, 1 bed)
-                aptRooms = parsed_json['results']['availableFloorPlanTypes'][i]['display']
-                print(str(numOfFloorPlans) + " floor plans available for " + aptRooms + " apartments")
-                for index in range(numOfFloorPlans):
+                apt_rooms = parsed_json['results']['availableFloorPlanTypes'][i]['display']
+                print(str(num_of_floor_plans) + " floor plans available for " + apt_rooms + " apartments")
+                for index in range(num_of_floor_plans):
                     # Length of apartments array inside of finishPackages array
-                    total += len(floorPlan[index]['finishPackages'][0]['apartments'])
-                    for index2 in range(len(floorPlan[index]['finishPackages'][0]['apartments'])):
+                    total += len(floor_plan[index]['finishPackages'][0]['apartments'])
+                    for index2 in range(len(floor_plan[index]['finishPackages'][0]['apartments'])):
                         # Shorten length of index required to access value
-                        short_apt = floorPlan[index]['finishPackages'][0]['apartments'][index2]
+                        short_apt = floor_plan[index]['finishPackages'][0]['apartments'][index2]
                         date = time.strftime('%Y-%m-%d', time.gmtime(int(short_apt['pricing']['availableDate'][6:19])/1000))
                         apts = {
                             'aptNum': short_apt['apartmentNumber'],
@@ -64,18 +65,18 @@ class ScrapeAPI:
                 print(str(total) + "  apartments available")
 
                 # add variables to floor plan summary dictionary for JSON
-                floorPlanSummary = {
-                    'name': aptRooms,
-                    'floor_plans': numOfFloorPlans,
+                floor_plan_summary = {
+                    'name': apt_rooms,
+                    'floor_plans': num_of_floor_plans,
                     'total': str(total)
                 }
                 # re-assign total to zero for next iteration
                 total = 0
-                aptSummary.append(floorPlanSummary)
-            aptInfo['summary'] = aptSummary
-            aptInfo['apartments'] = self.aptList
-            test = CreateJSON(aptInfo)
-            test.create()
+                apt_summary.append(floor_plan_summary)
+            apt_info['summary'] = apt_summary
+            apt_info['apartments'] = self.aptList
+            apt_json = CreateJSON(apt_info)
+            apt_json.create_latest()
 
     def get_data(self):
         return self.aptList

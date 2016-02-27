@@ -1,51 +1,59 @@
-__author__ = 'William Johnson'
 import json
-from scrape import ScrapeAPI
 
-def gen_html():
 
-    # Initialize html_body to store string literal containing html
-    html_body = ''
+class CreateMail:
 
-    # read saved data from json file containing API data
-    with open('test.json') as file:
-        apt_data = json.load(file)
-    # read current data from API
-    current_API = ScrapeAPI()
-    current_apts = current_API.get_data()
+    def __init__(self):
+        self.apt_folder = []
+        self.html = ""
 
-    # Create string literal containing html head element
-    html_head = html = """\
-            <!DOCTYPE html>
-        <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <title>My Apartments</title>
-        </head>
-        <body>
-        <table>
-        <caption>Apartment Summary</caption>
-        <thead>
-        <tr>
-            <th>
-                Type
-            </th>
-            <th>
-                Floor Plans Avail.
-            </th>
-        </tr>
-        </thead>
-        <tbody>
-       """
-    for index in range(len(apt_data['summary'])):
-        sub_body = """
-            <tr>
-                <td>""" + apt_data['summary'][index]['name'] + """</td>
-                <td>""" + apt_data['summary'][index]['total'] + """</td>
-            </tr>"""
-        html_body += sub_body
-    html = html_head + html_body
-    print(current_apts)
-    return html
+
+    def gen_html(self):
+
+        # Initialize html_body to store string literal containing html
+        html_body = ''
+        # Create string literal containing html head element
+        html_head = html = """\
+                <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <title>My Apartments</title>
+            </head>
+            <body>
+           """
+        for index in range(len(self.apt_folder)):
+            sub_body = """
+            <p>"""+self.apt_folder[index]['name']+"""</p>"""
+            html_body += sub_body
+        html_foot = """
+        </body>
+        </html>
+        """
+        self.html = html_head + html_body + html_foot
+        print(self.html)
+        return self.html
+
+
     # compare data and act on new data
-gen_html()
+    def compare_json(self):
+        with open('apt_original.json') as org_file:
+            org_data = json.load(org_file)
+        with open('apt_latest.json') as latest_file:
+            latest_data = json.load(latest_file)
+
+        for counter in range(len(latest_data['summary'])):
+            shorten_latest = latest_data['summary'][counter]
+            for counter2 in range(len(org_data['summary'])):
+                shorten_org = org_data['summary'][counter2]
+                if shorten_latest['name'] == shorten_org['name']:
+                    apt_comparison = {}
+                    apt_comparison['name'] = shorten_org['name']
+                    apt_comparison['update'] = int(shorten_latest['total']) - int(shorten_org['total'])
+                    self.apt_folder.append(apt_comparison)
+                    print(apt_comparison)
+
+
+if __name__ == "__main__":
+    test = CreateMail()
+    test.compare_json()

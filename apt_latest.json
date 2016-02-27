@@ -1,0 +1,100 @@
+{
+    "apartments": [
+        {
+            "aptSize": 602,
+            "aptPrice": 2063,
+            "aptAvailDate": "2016-03-05",
+            "aptNum": "109-204"
+        },
+        {
+            "aptSize": 602,
+            "aptPrice": 2103,
+            "aptAvailDate": "2016-03-12",
+            "aptNum": "116-103"
+        },
+        {
+            "aptSize": 603,
+            "aptPrice": 2073,
+            "aptAvailDate": "2016-03-02",
+            "aptNum": "961-201"
+        },
+        {
+            "aptSize": 603,
+            "aptPrice": 2088,
+            "aptAvailDate": "2016-03-05",
+            "aptNum": "967-205"
+        },
+        {
+            "aptSize": 603,
+            "aptPrice": 2103,
+            "aptAvailDate": "2016-03-07",
+            "aptNum": "116-205"
+        },
+        {
+            "aptSize": 603,
+            "aptPrice": 2103,
+            "aptAvailDate": "2016-03-08",
+            "aptNum": "118-101"
+        },
+        {
+            "aptSize": 603,
+            "aptPrice": 2078,
+            "aptAvailDate": "2016-03-13",
+            "aptNum": "111-105"
+        },
+        {
+            "aptSize": 603,
+            "aptPrice": 2146,
+            "aptAvailDate": "2016-03-19",
+            "aptNum": "979-302"
+        },
+        {
+            "aptSize": 697,
+            "aptPrice": 2381,
+            "aptAvailDate": "2016-03-10",
+            "aptNum": "00B-204"
+        },
+        {
+            "aptSize": 697,
+            "aptPrice": 2399,
+            "aptAvailDate": "2016-03-10",
+            "aptNum": "00A-408"
+        },
+        {
+            "aptSize": 777,
+            "aptPrice": 2253,
+            "aptAvailDate": "2016-02-27",
+            "aptNum": "973-106"
+        },
+        {
+            "aptSize": 777,
+            "aptPrice": 2258,
+            "aptAvailDate": "2016-02-27",
+            "aptNum": "991-203"
+        },
+        {
+            "aptSize": 777,
+            "aptPrice": 2248,
+            "aptAvailDate": "2016-03-05",
+            "aptNum": "991-105"
+        },
+        {
+            "aptSize": 955,
+            "aptPrice": 2856,
+            "aptAvailDate": "2016-02-27",
+            "aptNum": "124-307"
+        }
+    ],
+    "summary": [
+        {
+            "name": "1 bedroom",
+            "floor_plans": 4,
+            "total": "13"
+        },
+        {
+            "name": "2 bedrooms",
+            "floor_plans": 1,
+            "total": "1"
+        }
+    ]
+}

@@ -9,7 +9,7 @@ from email.mime.text import MIMEText
 import os
 from apiclient import errors
 from email.mime.multipart import MIMEMultipart
-import create_mail
+from create_mail import CreateMail
 
 try:
     import argparse
@@ -95,8 +95,10 @@ def main():
         for label in labels:
             print(label['name'])
 
-    html = create_mail.gen_html()
-
+    mail = CreateMail()
+    mail.compare_json()
+    html = mail.gen_html()
+    print(html)
     content = CreateMessage("william.c.johnson92@gmail.com", "wcjohnson@email.arizona.edu", "Gmail API", html, "testing message")
     SendMessage(service, "william.c.johnson92@gmail.com", content)
 
