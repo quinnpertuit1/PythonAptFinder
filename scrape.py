@@ -6,10 +6,13 @@ import time
 
 
 class ScrapeAPI:
-    def __init__(self):
+    def __init__(self, rent_min, rent_max, rent_date, search_type):
         # create empty dictionary for apartment info
         self.aptList = []
-        self.scrape()
+        self.rent_min = rent_min
+        self.rent_max = rent_max
+        self.rent_date = rent_date
+        self.search_type = search_type
 
     def scrape(self):
         # url of api
@@ -24,9 +27,9 @@ class ScrapeAPI:
         total = 0
         # add key & values to dictionary
         query['communityCode'] = 'CA564'
-        query['desiredMoveInDate'] = '2016-02-29T07:00:00.000Z'
-        query['min'] = '2000'
-        query['max'] = '3000'
+        query['desiredMoveInDate'] = self.rent_date + 'T08:00:00.000Z'
+        query['min'] = self.rent_min
+        query['max'] = self.rent_max
         # convert dictionary above into url-encoded string
         url_values = urllib.parse.urlencode(query)
         # append url_values to url from line 6
@@ -54,12 +57,12 @@ class ScrapeAPI:
                     for index2 in range(len(floor_plan[index]['finishPackages'][0]['apartments'])):
                         # Shorten length of index required to access value
                         short_apt = floor_plan[index]['finishPackages'][0]['apartments'][index2]
-                        date = time.strftime('%Y-%m-%d', time.gmtime(int(short_apt['pricing']['availableDate'][6:19])/1000))
+                        rent_date = time.strftime('%Y-%m-%d', time.gmtime(int(short_apt['pricing']['availableDate'][6:19]) / 1000))
                         apts = {
                             'aptNum': short_apt['apartmentNumber'],
                             'aptSize': short_apt['apartmentSize'],
                             'aptPrice': short_apt['pricing']['effectiveRent'],
-                            'aptAvailDate': date
+                            'aptAvailDate': rent_date
                         }
                         self.aptList.append(apts)
                 print(str(total) + "  apartments available")
@@ -76,15 +79,16 @@ class ScrapeAPI:
             apt_info['summary'] = apt_summary
             apt_info['apartments'] = self.aptList
             apt_json = CreateJSON(apt_info)
-            apt_json.create_latest()
+            # Determine which json file to create
+            if self.search_type == 'org':
+                apt_json.create_org()
+            else:
+                apt_json.create_latest()
 
+    # return apartment data
     def get_data(self):
         return self.aptList
 
-    def main(self):
-        self.scrape()
-        self.get_data()
-
 if __name__ == "__main__":
-    test = ScrapeAPI()
-    test.get_data()
+    search = ScrapeAPI(2000, 3000, '2016-02-26', 'org')
+    search.scrape()

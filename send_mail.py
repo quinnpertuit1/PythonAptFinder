@@ -98,7 +98,6 @@ def main():
     mail = CreateMail()
     mail.compare_json()
     html = mail.gen_html()
-    print(html)
     content = CreateMessage("william.c.johnson92@gmail.com", "wcjohnson@email.arizona.edu", "Gmail API", html, "testing message")
     SendMessage(service, "william.c.johnson92@gmail.com", content)
 
