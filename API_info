@@ -1,3 +1,0 @@
-API returns Available and Unavailable floor plan types. AvailableFloorPlans is an array that contains an object for each floor plan
-available. Each floor plan contains an array of available apartments and general info about the plan. Each floor plan may have
-more than 1 finish package.
