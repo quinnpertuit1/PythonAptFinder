@@ -3,121 +3,181 @@
         {
             "aptSize": 510,
             "aptNum": "997-302",
-            "aptPrice": 2033,
-            "aptAvailDate": "2016-03-29"
+            "aptAvailDate": "2016-03-29",
+            "aptPrice": 2033
         },
         {
             "aptSize": 602,
             "aptNum": "116-103",
-            "aptPrice": 2063,
-            "aptAvailDate": "2016-03-22"
+            "aptAvailDate": "2016-03-22",
+            "aptPrice": 2053
         },
         {
             "aptSize": 602,
             "aptNum": "979-203",
-            "aptPrice": 2083,
-            "aptAvailDate": "2016-04-06"
+            "aptAvailDate": "2016-04-06",
+            "aptPrice": 2083
         },
         {
             "aptSize": 602,
             "aptNum": "118-104",
-            "aptPrice": 2123,
-            "aptAvailDate": "2016-04-14"
+            "aptAvailDate": "2016-04-14",
+            "aptPrice": 2123
+        },
+        {
+            "aptSize": 603,
+            "aptNum": "961-201",
+            "aptAvailDate": "2016-03-12",
+            "aptPrice": 2013
+        },
+        {
+            "aptSize": 603,
+            "aptNum": "116-205",
+            "aptAvailDate": "2016-03-12",
+            "aptPrice": 2038
+        },
+        {
+            "aptSize": 603,
+            "aptNum": "111-105",
+            "aptAvailDate": "2016-03-15",
+            "aptPrice": 2018
+        },
+        {
+            "aptSize": 603,
+            "aptNum": "979-302",
+            "aptAvailDate": "2016-03-19",
+            "aptPrice": 2061
         },
         {
             "aptSize": 603,
             "aptNum": "961-301",
-            "aptPrice": 2126,
-            "aptAvailDate": "2016-04-07"
+            "aptAvailDate": "2016-04-07",
+            "aptPrice": 2126
+        },
+        {
+            "aptSize": 697,
+            "aptNum": "00A-408",
+            "aptAvailDate": "2016-03-12",
+            "aptPrice": 2399
+        },
+        {
+            "aptSize": 717,
+            "aptNum": "00C-313",
+            "aptAvailDate": "2016-03-12",
+            "aptPrice": 2408
         },
         {
             "aptSize": 717,
             "aptNum": "00C-312",
-            "aptPrice": 2559,
-            "aptAvailDate": "2016-04-07"
+            "aptAvailDate": "2016-04-02",
+            "aptPrice": 2529
         },
         {
             "aptSize": 717,
             "aptNum": "00C-315",
-            "aptPrice": 2483,
-            "aptAvailDate": "2016-04-12"
+            "aptAvailDate": "2016-04-07",
+            "aptPrice": 2468
         },
         {
             "aptSize": 717,
             "aptNum": "00C-210",
-            "aptPrice": 2556,
-            "aptAvailDate": "2016-04-17"
+            "aptAvailDate": "2016-04-12",
+            "aptPrice": 2556
+        },
+        {
+            "aptSize": 777,
+            "aptNum": "122-103",
+            "aptAvailDate": "2016-03-12",
+            "aptPrice": 2020
+        },
+        {
+            "aptSize": 777,
+            "aptNum": "991-105",
+            "aptAvailDate": "2016-03-12",
+            "aptPrice": 2198
+        },
+        {
+            "aptSize": 777,
+            "aptNum": "973-106",
+            "aptAvailDate": "2016-03-12",
+            "aptPrice": 2198
+        },
+        {
+            "aptSize": 777,
+            "aptNum": "991-203",
+            "aptAvailDate": "2016-03-12",
+            "aptPrice": 2198
+        },
+        {
+            "aptSize": 777,
+            "aptNum": "985-306",
+            "aptAvailDate": "2016-03-12",
+            "aptPrice": 2216
         },
         {
             "aptSize": 777,
             "aptNum": "991-103",
-            "aptPrice": 2223,
-            "aptAvailDate": "2016-03-22"
+            "aptAvailDate": "2016-03-22",
+            "aptPrice": 2213
         },
         {
             "aptSize": 777,
             "aptNum": "985-206",
-            "aptPrice": 2218,
-            "aptAvailDate": "2016-04-02"
-        },
-        {
-            "aptSize": 777,
-            "aptNum": "120-107",
-            "aptPrice": 2268,
-            "aptAvailDate": "2016-04-04"
+            "aptAvailDate": "2016-04-02",
+            "aptPrice": 2213
         },
         {
             "aptSize": 777,
             "aptNum": "955-104",
-            "aptPrice": 2319,
-            "aptAvailDate": "2016-04-07"
+            "aptAvailDate": "2016-04-07",
+            "aptPrice": 2319
         },
         {
             "aptSize": 777,
             "aptNum": "122-203",
-            "aptPrice": 2243,
-            "aptAvailDate": "2016-04-08"
+            "aptAvailDate": "2016-04-08",
+            "aptPrice": 2243
         },
         {
             "aptSize": 777,
             "aptNum": "997-103",
-            "aptPrice": 2056,
-            "aptAvailDate": "2016-04-14"
+            "aptAvailDate": "2016-04-14",
+            "aptPrice": 2056
         },
         {
             "aptSize": 955,
             "aptNum": "120-211",
-            "aptPrice": 2655,
-            "aptAvailDate": "2016-04-07"
+            "aptAvailDate": "2016-04-07",
+            "aptPrice": 2715
         },
         {
             "aptSize": 955,
             "aptNum": "955-307",
-            "aptPrice": 2926,
-            "aptAvailDate": "2016-04-12"
+            "aptAvailDate": "2016-04-14",
+            "aptPrice": 2991
         },
         {
             "aptSize": 969,
             "aptNum": "00B-206",
-            "aptPrice": 3260,
-            "aptAvailDate": "2016-03-24"
+            "aptAvailDate": "2016-03-24",
+            "aptPrice": 3270
         }
     ],
     "summary": [
         {
             "total": "1",
-            "name": "Studio",
-            "floor_plans": 1
+            "floor_plans": 1,
+            "name": "Studio"
         },
         {
-            "total": "13",
-            "name": "1 bedroom",
-            "floor_plans": 4
+            "total": "23",
+            "floor_plans": 5,
+            "name": "1 bedroom"
         },
         {
             "total": "3",
-            "name": "2 bedrooms",
-            "floor_plans": 2
+            "floor_plans": 2,
+            "name": "2 bedrooms"
         }
     ]
 }

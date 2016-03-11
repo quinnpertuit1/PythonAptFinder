@@ -57,6 +57,8 @@ class CreateMail:
             # Check if updates are positive
             if self.apt_folder[index]['update'] > 0:
                 update = '<span style="font-weight:bold; color: green;"> +' + str(self.apt_folder[index]['update']) + '</span>'
+            elif self.apt_folder[index]['udpdate'] == 0:
+                update = '<span style="font-weight:bold; color: black;"> +' + str(self.apt_folder[index]['update']) + '</span>'
             else:
                 update = '<span style="font-weight:bold; color: red;">' + str(self.apt_folder[index]['update']) + '</span>'
             sub_body = "<p>"+self.apt_folder[index]['name'] + ":" + update + "</span></p>"
