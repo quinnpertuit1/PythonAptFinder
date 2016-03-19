@@ -17,4 +17,5 @@ The link below shows you how to get started and gives some sample code. Please n
 [Google Developer Console](https://developers.google.com/gmail/api/quickstart/python)
 
 ### Windows Task Scheduler Help
+Create a reoccuring event so that you get frequent apartment notifications( i.e. daily, weekly)
 [Esri blog](https://blogs.esri.com/esri/arcgis/2013/07/30/scheduling-a-scrip/)
