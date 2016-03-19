@@ -1,7 +1,7 @@
 # PythonAptFinder
 Python/Gmail API
 
-Python program that makes searching for apartments a breeze. :tada:
+Python program that makes searching for apartments a breeze. PythonAptFinder just scratches the surface, there are multiple ways to expand this idea. To get started, find an apartment (hopefully with an api), analyze the API and get coding! :tada:
 
 ### Getting Started
 To run this software, you'll need
@@ -17,5 +17,5 @@ The link below shows you how to get started and gives some sample code. Please n
 [Google Developer Console](https://developers.google.com/gmail/api/quickstart/python)
 
 ### Windows Task Scheduler Help
-Create a reoccuring event so that you get frequent apartment notifications( i.e. daily, weekly)
+Create a recurring event so that you get frequent apartment notifications( i.e. daily, weekly)
 [Esri blog](https://blogs.esri.com/esri/arcgis/2013/07/30/scheduling-a-scrip/)
